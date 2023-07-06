@@ -38,7 +38,7 @@ const Map = ({paths, stops})=> {
     }, [paths]);
 
     const getDistance = () => {
-        // seconds between when the component loaded and now
+        // seconds between when the component loaded
         const differentInTime = (new Date() - initialDate) / 1000; // pass to seconds
         return differentInTime * velocity; // d = v*t -- thanks Newton!
     };
@@ -62,7 +62,7 @@ const Map = ({paths, stops})=> {
           setProgress(progress)
           window.clearInterval(interval);
           console.log("Trip has been Completed!! Thank You !!")
-          return; // it's the end!
+          return; // here end!
         }
         const lastLine = progress[progress.length - 1];
     
@@ -76,7 +76,7 @@ const Map = ({paths, stops})=> {
           nextLine.lng
         );
     
-        // distance of this line
+        // distance of line
         const totalDistance = nextLine.distance - lastLine.distance;
         const percentage = (distance - lastLine.distance) / totalDistance;
     
